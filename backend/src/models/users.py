@@ -7,11 +7,19 @@ class User(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String(50), unique=True, index=True, nullable=False)
-    email = Column(String(100), unique=True, index=True, nullable=False)
+    email = Column(String(100), unique=True, index=True, nullable=True)
+    phone = Column(String(20), unique=True, index=True, nullable=True)
     hashed_password = Column(String(255), nullable=False)
+    
+    # vai tro nguoi dung: reader, staff, admin
+    role = Column(String(20), default="reader", nullable=False)
     
     # danh cho admin
     is_active = Column(Boolean, default=True) 
     
     # tu dong luu thoi gian tao tai khoan
     created_at = Column(DateTime(timezone=True), server_default=func.now())
+    
+    # khoi phuc mat khau
+    reset_token = Column(String(100), nullable=True)
+    reset_token_expires = Column(DateTime(timezone=True), nullable=True)

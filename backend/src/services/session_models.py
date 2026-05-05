@@ -8,7 +8,7 @@ class TransitionMatrixRecommender:
 
     # Ma tran chuyen doi (dua tren Markov Chain)
     def train_model(self): # chay dinh ky de tinh toan lai ma tran
-        actions = self.repository.get_all_sessions
+        actions = self.repository.get_all_sessions()
 
         session_dict = defaultdict(list) # gom nhom
         for session_id, book_id in actions:

@@ -17,4 +17,6 @@ class Book(Base):
     
     # diem danh gia trung binh
     average_rating = Column(Float, default=0.0) 
+    price = Column(Float, nullable=True)
+    stock = Column(Integer, default=10, nullable=False) # So luong ton kho
     created_at = Column(DateTime(timezone=True), server_default=func.now())

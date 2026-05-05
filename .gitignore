@@ -1,39 +1,41 @@
-# BẢO MẬT 
-.env
-.env.*
-!.env.example
-*.pem
-*.key
-aura-backend/.env
+# --- Frontend (React/Vite) ---
+node_modules/
+dist/
+dist-ssr
+*.local
+.eslintcache
 
-# PYTHON (BACKEND)
+# --- Backend (Python/FastAPI) ---
 .venv/
 venv/
-env/
 ENV/
+env/
 __pycache__/
 *.py[cod]
 *$py.class
-*.log
-db.sqlite3
+.pytest_cache/
+.coverage
+htmlcov/
+.env
 
+# --- Database & AI ---
+*.db
+*.sqlite3
+chroma_db/
+model_cache/
+data/temp_*.json
 
-# NODEJS / REACT (FRONTEND)
-node_modules/
-build/
-dist/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnp.*
-
-# CÔNG CỤ IDE
+# --- Docker & OS ---
 .DS_Store
 Thumbs.db
-.vscode/
+.docker-compose.log
+db_data/
 .idea/
+.vscode/
 
-# KHÁC
-backups/
-dump/
-tools/
+# --- Temporary & Documentation ---
+*.docx
+*.pdf
+seed_out.txt
+extracted_docx.txt
+sample.txt

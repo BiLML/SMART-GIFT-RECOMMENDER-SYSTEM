@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from models.user_action import UserAction
+from src.models.user_action import UserAction
 
 class SessionRepository:
     def __init__(self, db: Session):
